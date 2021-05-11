@@ -1,0 +1,192 @@
+# depslib dependency file v1.0
+1618596941 source:c:\users\neto\documents\projetos codeblocks\nova pasta\buraco\main.cpp
+	<iostream>
+	"designfunctions.h"
+	<ios>
+	<limits>
+	<stdio.h>
+	<vector>
+	"Baralho.h"
+	<cstdlib>
+	<ctime>
+
+1616550848 source:c:\users\neto\documents\projetos codeblocks\nova pasta\buraco\designfunctions.cpp
+	"designfunctions.h"
+	<iostream>
+
+1616550826 c:\users\neto\documents\projetos codeblocks\nova pasta\buraco\designfunctions.h
+	<iostream>
+
+1616551601 source:c:\users\neto\documents\projetos codeblocks\nova pasta\buraco\jogador.cpp
+	<iostream>
+
+1616551770 source:c:\users\neto\documents\projetos codeblocks\nova pasta\buraco\lixo.cpp
+	<iostream>
+
+1616551842 source:c:\users\neto\documents\projetos codeblocks\nova pasta\buraco\mao.cpp
+
+1616551825 source:c:\users\neto\documents\projetos codeblocks\nova pasta\buraco\mesa.cpp
+	"mesa.h"
+	<iostream>
+
+1616551910 c:\users\neto\documents\projetos codeblocks\nova pasta\buraco\mesa.h
+	<iostream>
+
+1616551391 source:c:\users\neto\documents\projetos codeblocks\nova pasta\buraco\monte.cpp
+	"monte.h"
+	<iostream>
+
+1616551458 c:\users\neto\documents\projetos codeblocks\nova pasta\buraco\monte.h
+	<iostream>
+
+1616551720 source:c:\users\neto\documents\projetos codeblocks\nova pasta\buraco\morto.cpp
+	<iostream>
+
+1618854842 c:\users\neto\documents\projetos codeblocks\nova pasta\buraco\baralho.h
+	<iostream>
+	<ios>
+	<limits>
+	<stdio.h>
+	<vector>
+	<cstdlib>
+	<ctime>
+
+1618596690 source:c:\users\neto\documents\projetos codeblocks\nova pasta\buraco\baralho.cpp
+	<iostream>
+	"designfunctions.h"
+	<ios>
+	<limits>
+	<stdio.h>
+	<vector>
+	"Baralho.h"
+	<cstdlib>
+	<ctime>
+
+1618855382 source:c:\users\neto\documents\coding\codeblocks\nova pasta\buraco\baralho.cpp
+	<iostream>
+	"designfunctions.h"
+	<ios>
+	<limits>
+	<stdio.h>
+	<vector>
+	"Baralho.h"
+	<cstdlib>
+	<ctime>
+	<sstream>
+
+1616550826 c:\users\neto\documents\coding\codeblocks\nova pasta\buraco\designfunctions.h
+	<iostream>
+
+1618854842 c:\users\neto\documents\coding\codeblocks\nova pasta\buraco\baralho.h
+	<iostream>
+	<ios>
+	<limits>
+	<stdio.h>
+	<vector>
+	<cstdlib>
+	<ctime>
+
+1616550848 source:c:\users\neto\documents\coding\codeblocks\nova pasta\buraco\designfunctions.cpp
+	"designfunctions.h"
+	<iostream>
+
+1616551601 source:c:\users\neto\documents\coding\codeblocks\nova pasta\buraco\jogador.cpp
+	<iostream>
+
+1616551770 source:c:\users\neto\documents\coding\codeblocks\nova pasta\buraco\lixo.cpp
+	<iostream>
+
+1618596941 source:c:\users\neto\documents\coding\codeblocks\nova pasta\buraco\main.cpp
+	<iostream>
+	"designfunctions.h"
+	<ios>
+	<limits>
+	<stdio.h>
+	<vector>
+	"Baralho.h"
+	<cstdlib>
+	<ctime>
+
+1616551842 source:c:\users\neto\documents\coding\codeblocks\nova pasta\buraco\mao.cpp
+
+1616551825 source:c:\users\neto\documents\coding\codeblocks\nova pasta\buraco\mesa.cpp
+	"mesa.h"
+	<iostream>
+
+1616551910 c:\users\neto\documents\coding\codeblocks\nova pasta\buraco\mesa.h
+	<iostream>
+
+1616551391 source:c:\users\neto\documents\coding\codeblocks\nova pasta\buraco\monte.cpp
+	"monte.h"
+	<iostream>
+
+1616551458 c:\users\neto\documents\coding\codeblocks\nova pasta\buraco\monte.h
+	<iostream>
+
+1616551720 source:c:\users\neto\documents\coding\codeblocks\nova pasta\buraco\morto.cpp
+	<iostream>
+
+1616550848 source:c:\users\neto\documents\coding\codeblocks\projetinhos\buraco\designfunctions.cpp
+	"designfunctions.h"
+	<iostream>
+
+1620529433 c:\users\neto\documents\coding\codeblocks\projetinhos\buraco\designfunctions.h
+	<iostream>
+
+1616551601 source:c:\users\neto\documents\coding\codeblocks\projetinhos\buraco\jogador.cpp
+	<iostream>
+
+1616551770 source:c:\users\neto\documents\coding\codeblocks\projetinhos\buraco\lixo.cpp
+	<iostream>
+
+1616551842 source:c:\users\neto\documents\coding\codeblocks\projetinhos\buraco\mao.cpp
+
+1616551825 source:c:\users\neto\documents\coding\codeblocks\projetinhos\buraco\mesa.cpp
+	"mesa.h"
+	<iostream>
+
+1620529434 c:\users\neto\documents\coding\codeblocks\projetinhos\buraco\mesa.h
+	<iostream>
+
+1616551391 source:c:\users\neto\documents\coding\codeblocks\projetinhos\buraco\monte.cpp
+	"monte.h"
+	<iostream>
+
+1620529434 c:\users\neto\documents\coding\codeblocks\projetinhos\buraco\monte.h
+	<iostream>
+
+1616551720 source:c:\users\neto\documents\coding\codeblocks\projetinhos\buraco\morto.cpp
+	<iostream>
+
+1620530832 source:c:\users\neto\documents\coding\codeblocks\projetinhos\buraco\main.cpp
+	<iostream>
+	"designfunctions.h"
+	<ios>
+	<limits>
+	<stdio.h>
+	<vector>
+	"Baralho.h"
+	<cstdlib>
+	<ctime>
+
+1620529433 c:\users\neto\documents\coding\codeblocks\projetinhos\buraco\baralho.h
+	<iostream>
+	<ios>
+	<limits>
+	<stdio.h>
+	<vector>
+	<cstdlib>
+	<ctime>
+
+1620532273 source:c:\users\neto\documents\coding\codeblocks\projetinhos\buraco\baralho.cpp
+	<iostream>
+	<ios>
+	<limits>
+	<stdio.h>
+	<vector>
+	<cstdlib>
+	<ctime>
+	<sstream>
+	"designfunctions.h"
+	"Baralho.h"
+
