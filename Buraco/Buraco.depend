@@ -190,3 +190,67 @@
 	"designfunctions.h"
 	"Baralho.h"
 
+1620788779 source:c:\users\neto\documents\github\buraco-cpp\buraco\baralho.cpp
+	<iostream>
+	<ios>
+	<limits>
+	<stdio.h>
+	<vector>
+	<cstdlib>
+	<ctime>
+	<sstream>
+	"designfunctions.h"
+	"Baralho.h"
+
+1620529433 c:\users\neto\documents\github\buraco-cpp\buraco\designfunctions.h
+	<iostream>
+
+1620789120 c:\users\neto\documents\github\buraco-cpp\buraco\baralho.h
+	<iostream>
+	<ios>
+	<limits>
+	<stdio.h>
+	<vector>
+	<cstdlib>
+	<ctime>
+
+1616550848 source:c:\users\neto\documents\github\buraco-cpp\buraco\designfunctions.cpp
+	"designfunctions.h"
+	<iostream>
+
+1616551601 source:c:\users\neto\documents\github\buraco-cpp\buraco\jogador.cpp
+	<iostream>
+
+1616551770 source:c:\users\neto\documents\github\buraco-cpp\buraco\lixo.cpp
+	<iostream>
+
+1620788371 source:c:\users\neto\documents\github\buraco-cpp\buraco\main.cpp
+	<iostream>
+	"designfunctions.h"
+	<ios>
+	<limits>
+	<stdio.h>
+	<vector>
+	"Baralho.h"
+	<cstdlib>
+	<ctime>
+
+1616551842 source:c:\users\neto\documents\github\buraco-cpp\buraco\mao.cpp
+
+1616551825 source:c:\users\neto\documents\github\buraco-cpp\buraco\mesa.cpp
+	"mesa.h"
+	<iostream>
+
+1620529434 c:\users\neto\documents\github\buraco-cpp\buraco\mesa.h
+	<iostream>
+
+1616551391 source:c:\users\neto\documents\github\buraco-cpp\buraco\monte.cpp
+	"monte.h"
+	<iostream>
+
+1620529434 c:\users\neto\documents\github\buraco-cpp\buraco\monte.h
+	<iostream>
+
+1616551720 source:c:\users\neto\documents\github\buraco-cpp\buraco\morto.cpp
+	<iostream>
+
