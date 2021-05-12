@@ -30,16 +30,19 @@ string suit;
 class deckDeCartas
 {
 public:
+
 // Default constructor: assigns the 52 cards to deck
-deckDeCartas();
-//shuffles the deck once all the cards are assigned
-void embaralha();
+criaDeckDeCartas();
+embaralha();
 //deals out one card from the deck of 52, refrences class card
 carta dealCard();
 
+
+
 private:
 //variable card with a pointer to deck
-carta *deck; // an array of cards of size SIZR
+carta *baralho; // an array of cards of size SIZE
 //keep track of what card you are dealing with
 string currentCard;
+//shuffles the deck once all the cards are assigned
 };

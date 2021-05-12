@@ -25,6 +25,7 @@ carta::carta(string cardFace, string cardSuit)
     suit = cardSuit;
 }
 //print function definition
+
 string carta::print()
 {
     //return the way the card will be displayed
@@ -32,40 +33,67 @@ string carta::print()
 }
 
 //assigns the 52 cards to deck
-deckDeCartas::deckDeCartas()
+deckDeCartas::criaDeckDeCartas()
 {
     //insere todos os possiveis pesos de cada naipe
     string pesos[] = {"Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"};
     //insere todos os possiveis naipes
     string naipe[] = {"Hearts", "Diamonds", "Clubs", "Spades"};
     //inicializa deck através da classe carta para um novo array usando o new
-    carta *baralho1=new carta[SIZE];
+
+    // *----------- Criando o deck vazio -----------* //
+
+    carta *baralho=new carta[SIZE];
+    cout << "Baralho criado com sucesso \n";
     //limpa o valor da carta atual
-    currentCard = "";
-    //crio um loop para colocar cada carta no novo array
+    carta currentCard;
+    //cria um loop para colocar cada carta no novo array
+
+    // *----------- Inserindo cartas -----------* //
+
+    cout << "Inserindo cartas no baralho... \n";
+
     for(int count = 0; count < SIZE; count++)
     {
-        //deck at postion count will be equal to card, each with a different face and suit
-        baralho1[count] = carta(pesos[count % 13], naipe[count / 13]);
+        //deck at position count will be equal to card, each with a different face and suit
+        baralho[count] = carta(pesos[count % 13], naipe[count / 13]);
     }
+    cout << "Insercao bem sucedida. \n";
+    system("pause");
+
+
+        // *----------- Printando as cartas apos embaralhadas -----------* //
+
+        for(int count = 0; count < SIZE; count++) {
+        currentCard = baralho[count];
+        cout << currentCard.print() << " ";
+        cout << count << endl;
+        }
+
+
 }
-//shuffles the deck once all the cards are assigned
-void deckDeCartas::embaralha()
+
+deckDeCartas::embaralha()
 {
-    //start at current card
-    currentCard = "";
+    carta currentCard;
     //create a for loop so all 52 cards will be shuffled
-    for(int first = 0; first < SIZE; first++)
+            for (int j=0; j<6; j++) {
+            for(int first = 0; first < SIZE; first++)
     {
+
+    // *----------- Embaralhando as cartas -----------* //
+
         //create an int called second and set it equal to the random operator
         int second = (rand() + time(0)) % SIZE;
         //create an int called temp and set it equal to the deck at the first postiion
-        carta temp = deck[first];
+        currentCard = baralho[first];
         //swap deck at first and second postion
-        deck[first] = deck[second];
+        baralho[first] = baralho[second];
         //swap deck and temp
-        deck[second] = temp;
+        baralho[second] = currentCard;
     }
+            j++;
+        }
 }
 
 
@@ -84,8 +112,8 @@ carta deckDeCartas::dealCard()
     if( k < SIZE)
     {
         //return deck at that current card and then increment
-        return (deck[k++]);
+        return (baralho[k++]);
     }
     //return the first card in the deck that we just found
-    return (deck[0]);
+    return (baralho[0]);
 }

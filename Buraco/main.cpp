@@ -10,28 +10,13 @@
 
 using namespace std;
 
+
 void executaJogo(int qtJogadores){
-    //declare deckofcards(from class) called deck
-    cout << "primeira linha de executa jogo" << endl;
-    deckDeCartas deck;
-    cout << "passei pelo deck de cartas" << endl;
-    //declate car called(from class) current card
-    //card currentCard;
-    //shuffle the deck that you just initalized
-    //deck.shuffle();
-    //determine how many cards you want to print out to the user
-    //right now it is two because we decided that each player will get two cards when they start
-    for( int i = 0; i <= 104; i++)
-    {
-        //set current card equal to deck.dealcard
-        //the return value will replace it
-
-        carta currentCard = deck.dealCard();
-        //include to actually print out current card in the format we want
-        cout << currentCard.print() << endl;
-    }
+    //Declara o deck, preenche, embaralha e print.
+    deckDeCartas baralho1;
+    system("pause");
+    baralho1.embaralha();
 }
-
 void gameStart(){
 
     int qtJogadores = 0;
@@ -43,10 +28,8 @@ void gameStart(){
     cin.clear();
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
     if(qtJogadores == 1 || qtJogadores == 2){
-        cout << "aa" << endl;
         executaJogo(qtJogadores);
     }else{
-
         getBlock();
         cout << "Informe um valor correto" << endl;
         cout << "Dupla ou Solo?" << endl;
