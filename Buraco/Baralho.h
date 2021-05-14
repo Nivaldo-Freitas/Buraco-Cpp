@@ -1,11 +1,13 @@
+#define SIZE 52
+
 #include <iostream>
 #include <ios>
 #include <limits>
 #include <stdio.h>
 #include <vector>
-#define SIZE 52
 #include <cstdlib>
 #include <ctime>
+
 using namespace std;
 
 //create a class called card
@@ -37,6 +39,7 @@ deckDeCartas();
 //variable card with a pointer to deck
 carta *baralho;
 embaralha();
+printa();
 private:
 
 };

@@ -6,8 +6,10 @@
 #include <cstdlib>
 #include <ctime>
 #include <sstream>
+
 #include "designfunctions.h"
 #include "Baralho.h"
+
 #define SIZE 52
 
 using namespace std;
@@ -37,7 +39,7 @@ deckDeCartas::deckDeCartas()
 {
     //insere todos os possiveis pesos de cada naipe
     string arrayDePesos[] = {"Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"};
-    //insere todos os possiveis naipes
+    //*-----------insere todos os possiveis naipes-----------*
     string arrayDeNaipes[] = {"Hearts", "Diamonds", "Clubs", "Spades"};
 
     // *----------- Criando o deck vazio -----------* //
@@ -50,29 +52,21 @@ deckDeCartas::deckDeCartas()
         cout << "Inserindo cartas no baralho... \n";
         for(int count = 0; count < SIZE; count++)
         {
-            //a carta dentro do baralho na posição count receberá os pesos e naipes
+            //-----------* a carta dentro do baralho na posição count receberá os pesos e naipes -----------*
             baralho[count] = carta(arrayDePesos[count % 13], arrayDeNaipes[count / 13]);
         }
         cout << "Insercao bem sucedida. \n";
         system("pause");
-
-    // *----------- Printando as cartas apos embaralhadas -----------* //
-        for(int count = 0; count < SIZE; count++)
-        {
-        carta currentCard = baralho[count];
-        cout << currentCard.print() << " ";
-        cout << count << endl;
-        }
 }
 
 deckDeCartas::embaralha()
 {
-        //Crio um loop para embaralhar as cartas 6 vezes
-        for (int j=0; j<6; j++) {
-            for(int first = 0; first < SIZE; first++)
-            {
-
-            // *----------- Embaralhando as cartas -----------* //
+    //*-----------Crio um loop para embaralhar as cartas 6 vezes-----------*
+    for (int j=0; j<15; j++)
+    {
+        for(int first = 0; first < SIZE; first++)
+        {
+                    // *----------- Embaralhando as cartas -----------* //
             // crio um int chamado Second e seto ele como  igual ao operador randomico
             int second = (rand() + time(0)) % SIZE;
             // Igualo currentCard à baralho na posição first (lembrando que current card é uma class card)
@@ -81,11 +75,18 @@ deckDeCartas::embaralha()
             baralho[first] = baralho[second];
             // Troco a carta dentro de baralho na posição second por currentCard
             baralho[second] = currentCard;
-            }
-        j++;
+        }
+    j++;
+    }
+}
+
+deckDeCartas::printa()
+{
+        // *----------- Printando as cartas apos embaralhadas -----------* //
+        for(int count = 0; count < SIZE; count++)
+        {
+            carta currentCard = baralho[count];
+            cout << currentCard.print() << " ";
+            cout << count << endl;
         }
 }
-//deckDeCartas::criaMorto()
-//{
-
-//}

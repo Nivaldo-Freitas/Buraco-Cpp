@@ -14,9 +14,13 @@ using namespace std;
 void executaJogo(int qtJogadores){
     //Declara o deck, preenche, embaralha e print.
     deckDeCartas baralho;
+    baralho.printa();
     system("pause");
     baralho.embaralha();
-    cout << "Saí de Embaralha";
+    cout << "Embaralhei \n";
+    system("pause");
+    baralho.printa();
+    system("pause");
 }
 void gameStart(){
 
