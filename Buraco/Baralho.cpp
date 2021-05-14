@@ -6,8 +6,10 @@
 #include <cstdlib>
 #include <ctime>
 #include <sstream>
+
 #include "designfunctions.h"
 #include "Baralho.h"
+
 #define SIZE 52
 
 using namespace std;
@@ -19,101 +21,72 @@ carta::carta()
 }
 
 //constructor with two parameters
-carta::carta(string cardFace, string cardSuit)
+carta::carta(string pesoDaCarta, string naipeDaCarta)
 {
-    face = cardFace;
-    suit = cardSuit;
+    peso = pesoDaCarta;
+    naipe = naipeDaCarta;
 }
 //print function definition
 
 string carta::print()
 {
     //return the way the card will be displayed
-    return (face + " of " + suit);
+    return (peso + " of " + naipe);
 }
 
-//assigns the 52 cards to deck
-deckDeCartas::criaDeckDeCartas()
+//Cria o as SIZE cartas do deck
+deckDeCartas::deckDeCartas()
 {
     //insere todos os possiveis pesos de cada naipe
-    string pesos[] = {"Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"};
-    //insere todos os possiveis naipes
-    string naipe[] = {"Hearts", "Diamonds", "Clubs", "Spades"};
-    //inicializa deck através da classe carta para um novo array usando o new
+    string arrayDePesos[] = {"Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"};
+    //*-----------insere todos os possiveis naipes-----------*
+    string arrayDeNaipes[] = {"Hearts", "Diamonds", "Clubs", "Spades"};
 
     // *----------- Criando o deck vazio -----------* //
-
-    carta *baralho=new carta[SIZE];
-    cout << "Baralho criado com sucesso \n";
-    //limpa o valor da carta atual
-    carta currentCard;
-    //cria um loop para colocar cada carta no novo array
+        //inicializa deck através da classe carta para um novo array usando o new
+        baralho=new carta[SIZE];
+        cout << "Baralho criado com sucesso \n";
 
     // *----------- Inserindo cartas -----------* //
-
-    cout << "Inserindo cartas no baralho... \n";
-
-    for(int count = 0; count < SIZE; count++)
-    {
-        //deck at position count will be equal to card, each with a different face and suit
-        baralho[count] = carta(pesos[count % 13], naipe[count / 13]);
-    }
-    cout << "Insercao bem sucedida. \n";
-    system("pause");
-
-
-        // *----------- Printando as cartas apos embaralhadas -----------* //
-
-        for(int count = 0; count < SIZE; count++) {
-        currentCard = baralho[count];
-        cout << currentCard.print() << " ";
-        cout << count << endl;
+        //cria um loop para colocar cada carta no novo array
+        cout << "Inserindo cartas no baralho... \n";
+        for(int count = 0; count < SIZE; count++)
+        {
+            //-----------* a carta dentro do baralho na posição count receberá os pesos e naipes -----------*
+            baralho[count] = carta(arrayDePesos[count % 13], arrayDeNaipes[count / 13]);
         }
-
-
+        cout << "Insercao bem sucedida. \n";
+        system("pause");
 }
 
 deckDeCartas::embaralha()
 {
-    carta currentCard;
-    //create a for loop so all 52 cards will be shuffled
-            for (int j=0; j<6; j++) {
-            for(int first = 0; first < SIZE; first++)
+    //*-----------Crio um loop para embaralhar as cartas 6 vezes-----------*
+    for (int j=0; j<15; j++)
     {
-
-    // *----------- Embaralhando as cartas -----------* //
-
-        //create an int called second and set it equal to the random operator
-        int second = (rand() + time(0)) % SIZE;
-        //create an int called temp and set it equal to the deck at the first postiion
-        currentCard = baralho[first];
-        //swap deck at first and second postion
-        baralho[first] = baralho[second];
-        //swap deck and temp
-        baralho[second] = currentCard;
-    }
-            j++;
+        for(int first = 0; first < SIZE; first++)
+        {
+                    // *----------- Embaralhando as cartas -----------* //
+            // crio um int chamado Second e seto ele como  igual ao operador randomico
+            int second = (rand() + time(0)) % SIZE;
+            // Igualo currentCard à baralho na posição first (lembrando que current card é uma class card)
+            carta currentCard = baralho[first];
+            // Troco a carta dentro de baralho na posição first por baralho na posição second
+            baralho[first] = baralho[second];
+            // Troco a carta dentro de baralho na posição second por currentCard
+            baralho[second] = currentCard;
         }
+    j++;
+    }
 }
 
-
-carta deckDeCartas::dealCard()
+deckDeCartas::printa()
 {
-    //se não estivermos sem cartas
-    int k;
-    stringstream intcurrentCard(currentCard);
-    intcurrentCard >> k;
-    if(k > SIZE)
-    {
-        //embaralha
-        embaralha();
-    }
-    //se não estivermos sem cartas
-    if( k < SIZE)
-    {
-        //return deck at that current card and then increment
-        return (baralho[k++]);
-    }
-    //return the first card in the deck that we just found
-    return (baralho[0]);
+        // *----------- Printando as cartas apos embaralhadas -----------* //
+        for(int count = 0; count < SIZE; count++)
+        {
+            carta currentCard = baralho[count];
+            cout << currentCard.print() << " ";
+            cout << count << endl;
+        }
 }

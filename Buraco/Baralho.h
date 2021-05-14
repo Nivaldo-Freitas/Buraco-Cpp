@@ -1,28 +1,30 @@
+#define SIZE 52
+
 #include <iostream>
 #include <ios>
 #include <limits>
 #include <stdio.h>
 #include <vector>
-#define SIZE 52
 #include <cstdlib>
 #include <ctime>
+
 using namespace std;
 
 //create a class called card
 class carta
 {
 public:
-//default constructer
+//construtor padrão de cartas vazias
 carta();
-//constructer with parameters
-carta(string cardFace, string cardSuit);
+//Construtor com parametros, para preencher as cartas vazias criadas
+carta(string pesoDaCarta, string naipeDaCarta);
 //print function
 string print();
+//Cria duas strings para naipe e pesos da carta
+string peso;
+string naipe;
 
 private:
-//create two card variables face and suit
-string face;
-string suit;
 
 };
 
@@ -30,19 +32,14 @@ string suit;
 class deckDeCartas
 {
 public:
-
-// Default constructor: assigns the 52 cards to deck
-criaDeckDeCartas();
-embaralha();
-//deals out one card from the deck of 52, refrences class card
-carta dealCard();
-
-
-
-private:
-//variable card with a pointer to deck
-carta *baralho; // an array of cards of size SIZE
 //keep track of what card you are dealing with
 string currentCard;
-//shuffles the deck once all the cards are assigned
+// Default constructor: assigns the 52 cards to deck
+deckDeCartas();
+//variable card with a pointer to deck
+carta *baralho;
+embaralha();
+printa();
+private:
+
 };

@@ -190,7 +190,7 @@
 	"designfunctions.h"
 	"Baralho.h"
 
-1620788779 source:c:\users\neto\documents\github\buraco-cpp\buraco\baralho.cpp
+1620958120 source:c:\users\neto\documents\github\buraco-cpp\buraco\baralho.cpp
 	<iostream>
 	<ios>
 	<limits>
@@ -205,7 +205,7 @@
 1620529433 c:\users\neto\documents\github\buraco-cpp\buraco\designfunctions.h
 	<iostream>
 
-1620789120 c:\users\neto\documents\github\buraco-cpp\buraco\baralho.h
+1620958146 c:\users\neto\documents\github\buraco-cpp\buraco\baralho.h
 	<iostream>
 	<ios>
 	<limits>
@@ -224,7 +224,7 @@
 1616551770 source:c:\users\neto\documents\github\buraco-cpp\buraco\lixo.cpp
 	<iostream>
 
-1620788371 source:c:\users\neto\documents\github\buraco-cpp\buraco\main.cpp
+1620958256 source:c:\users\neto\documents\github\buraco-cpp\buraco\main.cpp
 	<iostream>
 	"designfunctions.h"
 	<ios>
