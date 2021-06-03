@@ -190,7 +190,39 @@
 	"designfunctions.h"
 	"Baralho.h"
 
-1620958120 source:c:\users\neto\documents\github\buraco-cpp\buraco\baralho.cpp
+1622692852 source:c:\users\neto\documents\github\buraco-cpp\buraco\baralho.cpp
+	<iostream>
+	<ios>
+	<limits>
+	<stdio.h>
+	<vector>
+	<cstdlib>
+	<ctime>
+	<sstream>
+	"designfunctions.h"
+	"jogador.h"
+	"mao.h"
+	"lixo.h"
+	"Baralho.h"
+
+1620958874 c:\users\neto\documents\github\buraco-cpp\buraco\designfunctions.h
+	<iostream>
+
+1622692853 c:\users\neto\documents\github\buraco-cpp\buraco\baralho.h
+	<iostream>
+	<ios>
+	<limits>
+	<stdio.h>
+	<vector>
+	<cstdlib>
+	<ctime>
+	<sstream>
+
+1620958874 source:c:\users\neto\documents\github\buraco-cpp\buraco\designfunctions.cpp
+	"designfunctions.h"
+	<iostream>
+
+1622690860 source:c:\users\neto\documents\github\buraco-cpp\buraco\jogador.cpp
 	<iostream>
 	<ios>
 	<limits>
@@ -201,11 +233,11 @@
 	<sstream>
 	"designfunctions.h"
 	"Baralho.h"
+	"mao.h"
+	"lixo.h"
+	"jogador.h"
 
-1620529433 c:\users\neto\documents\github\buraco-cpp\buraco\designfunctions.h
-	<iostream>
-
-1620958146 c:\users\neto\documents\github\buraco-cpp\buraco\baralho.h
+1622690865 source:c:\users\neto\documents\github\buraco-cpp\buraco\lixo.cpp
 	<iostream>
 	<ios>
 	<limits>
@@ -213,44 +245,117 @@
 	<vector>
 	<cstdlib>
 	<ctime>
-
-1616550848 source:c:\users\neto\documents\github\buraco-cpp\buraco\designfunctions.cpp
+	<sstream>
 	"designfunctions.h"
-	<iostream>
-
-1616551601 source:c:\users\neto\documents\github\buraco-cpp\buraco\jogador.cpp
-	<iostream>
-
-1616551770 source:c:\users\neto\documents\github\buraco-cpp\buraco\lixo.cpp
-	<iostream>
-
-1620958256 source:c:\users\neto\documents\github\buraco-cpp\buraco\main.cpp
-	<iostream>
-	"designfunctions.h"
-	<ios>
-	<limits>
-	<stdio.h>
-	<vector>
 	"Baralho.h"
+	"mao.h"
+	"jogador.h"
+	"lixo.h"
+
+1622693198 source:c:\users\neto\documents\github\buraco-cpp\buraco\main.cpp
+	<iostream>
+	<ios>
+	<limits>
+	<stdio.h>
+	<vector>
 	<cstdlib>
 	<ctime>
+	<sstream>
+	"designfunctions.h"
+	"Baralho.h"
+	"mao.h"
+	"jogador.h"
+	"lixo.h"
+	"GameFunctions.h"
 
-1616551842 source:c:\users\neto\documents\github\buraco-cpp\buraco\mao.cpp
+1622690877 source:c:\users\neto\documents\github\buraco-cpp\buraco\mao.cpp
+	<iostream>
+	<ios>
+	<limits>
+	<stdio.h>
+	<vector>
+	<cstdlib>
+	<ctime>
+	<sstream>
+	"designfunctions.h"
+	"Baralho.h"
+	"jogador.h"
+	"lixo.h"
+	"mao.h"
 
-1616551825 source:c:\users\neto\documents\github\buraco-cpp\buraco\mesa.cpp
+1620958874 source:c:\users\neto\documents\github\buraco-cpp\buraco\mesa.cpp
 	"mesa.h"
 	<iostream>
 
-1620529434 c:\users\neto\documents\github\buraco-cpp\buraco\mesa.h
+1620958874 c:\users\neto\documents\github\buraco-cpp\buraco\mesa.h
 	<iostream>
 
-1616551391 source:c:\users\neto\documents\github\buraco-cpp\buraco\monte.cpp
+1620958874 source:c:\users\neto\documents\github\buraco-cpp\buraco\monte.cpp
 	"monte.h"
 	<iostream>
 
-1620529434 c:\users\neto\documents\github\buraco-cpp\buraco\monte.h
+1620958874 c:\users\neto\documents\github\buraco-cpp\buraco\monte.h
 	<iostream>
 
-1616551720 source:c:\users\neto\documents\github\buraco-cpp\buraco\morto.cpp
+1620958874 source:c:\users\neto\documents\github\buraco-cpp\buraco\morto.cpp
 	<iostream>
+
+1622690851 c:\users\neto\documents\github\buraco-cpp\buraco\mao.h
+	<iostream>
+	<ios>
+	<limits>
+	<stdio.h>
+	<vector>
+	<cstdlib>
+	<ctime>
+	<sstream>
+	"lixo.h"
+
+1622690851 c:\users\neto\documents\github\buraco-cpp\buraco\jogador.h
+	<iostream>
+	<ios>
+	<limits>
+	<stdio.h>
+	<vector>
+	<cstdlib>
+	<ctime>
+	<sstream>
+	"Baralho.h"
+	"mao.h"
+
+1622674301 c:\users\neto\documents\github\buraco-cpp\buraco\lixo.h
+	<iostream>
+	<ios>
+	<limits>
+	<stdio.h>
+	<vector>
+	<cstdlib>
+	<ctime>
+	<sstream>
+
+1622690851 source:c:\users\neto\documents\github\buraco-cpp\buraco\gamefunctions.cpp
+	<iostream>
+	<ios>
+	<limits>
+	<stdio.h>
+	<vector>
+	<cstdlib>
+	<ctime>
+	<sstream>
+	"designfunctions.h"
+	"Baralho.h"
+	"mao.h"
+	"jogador.h"
+	"lixo.h"
+	"GameFunctions.h"
+
+1622673888 c:\users\neto\documents\github\buraco-cpp\buraco\gamefunctions.h
+	<iostream>
+	<ios>
+	<limits>
+	<stdio.h>
+	<vector>
+	<cstdlib>
+	<ctime>
+	<sstream>
 

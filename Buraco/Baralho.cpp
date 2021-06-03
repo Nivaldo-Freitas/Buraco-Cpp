@@ -8,9 +8,16 @@
 #include <sstream>
 
 #include "designfunctions.h"
+#include "jogador.h"
+#include "mao.h"
+#include "lixo.h"
+
 #include "Baralho.h"
 
+#define QUANTIDADE_DE_DECKS 2
 #define SIZE 52
+#define MORTOSIZE 11
+#define MAOSIZE 11
 
 using namespace std;
 
@@ -20,7 +27,7 @@ carta::carta()
  // aqui adiciona um elemento vazio ao vetor do baralho.
 }
 
-//constructor with two parameters
+//constructor com dois parametros
 carta::carta(string pesoDaCarta, string naipeDaCarta)
 {
     peso = pesoDaCarta;
@@ -30,7 +37,6 @@ carta::carta(string pesoDaCarta, string naipeDaCarta)
 
 string carta::print()
 {
-    //return the way the card will be displayed
     return (peso + " of " + naipe);
 }
 
@@ -42,21 +48,14 @@ deckDeCartas::deckDeCartas()
     //*-----------insere todos os possiveis naipes-----------*
     string arrayDeNaipes[] = {"Hearts", "Diamonds", "Clubs", "Spades"};
 
-    // *----------- Criando o deck vazio -----------* //
-        //inicializa deck através da classe carta para um novo array usando o new
-        baralho=new carta[SIZE];
-        cout << "Baralho criado com sucesso \n";
-
     // *----------- Inserindo cartas -----------* //
         //cria um loop para colocar cada carta no novo array
-        cout << "Inserindo cartas no baralho... \n";
-        for(int count = 0; count < SIZE; count++)
+    for(int i = 0; i < QUANTIDADE_DE_DECKS; i++)
+        for(int k = 0; k < SIZE; k++)
         {
             //-----------* a carta dentro do baralho na posição count receberá os pesos e naipes -----------*
-            baralho[count] = carta(arrayDePesos[count % 13], arrayDeNaipes[count / 13]);
+            baralho.push_back(carta(arrayDePesos[k % 13], arrayDeNaipes[k / 13]));
         }
-        cout << "Insercao bem sucedida. \n";
-        system("pause");
 }
 
 deckDeCartas::embaralha()
@@ -80,13 +79,21 @@ deckDeCartas::embaralha()
     }
 }
 
-deckDeCartas::printa()
+deckDeCartas::printaTudo()
 {
-        // *----------- Printando as cartas apos embaralhadas -----------* //
-        for(int count = 0; count < SIZE; count++)
-        {
-            carta currentCard = baralho[count];
-            cout << currentCard.print() << " ";
-            cout << count << endl;
-        }
+    vector <carta> baralhoAux = baralho;
+    // *----------- Printando as cartas -----------* //
+    for(int i = 0; i < baralho.size(); i++)
+    {
+        carta currentCard = baralhoAux.back();
+        baralhoAux.pop_back();
+        cout << currentCard.print() << " "  << i << endl;
+    }
+}
+
+carta deckDeCartas::tiraCarta()
+{
+    carta currentCard = baralho.back();
+    baralho.pop_back();
+    return currentCard;
 }

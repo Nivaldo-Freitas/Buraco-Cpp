@@ -34,6 +34,8 @@
 		</Compiler>
 		<Unit filename="Baralho.cpp" />
 		<Unit filename="Baralho.h" />
+		<Unit filename="GameFunctions.cpp" />
+		<Unit filename="GameFunctions.h" />
 		<Unit filename="designfunctions.cpp" />
 		<Unit filename="designfunctions.h" />
 		<Unit filename="jogador.cpp" />
