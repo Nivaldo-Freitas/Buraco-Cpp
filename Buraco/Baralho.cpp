@@ -46,24 +46,27 @@ deckDeCartas::deckDeCartas()
     //insere todos os possiveis pesos de cada naipe
     string arrayDePesos[] = {"Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"};
     //*-----------insere todos os possiveis naipes-----------*
-    string arrayDeNaipes[] = {"Hearts", "Diamonds", "Clubs", "Spades"};
+    string arrayDeNaipes[] = {"C", "D", "P", "E"};
 
     // *----------- Inserindo cartas -----------* //
         //cria um loop para colocar cada carta no novo array
     for(int i = 0; i < QUANTIDADE_DE_DECKS; i++)
+    {
         for(int k = 0; k < SIZE; k++)
         {
             //-----------* a carta dentro do baralho na posição count receberá os pesos e naipes -----------*
             baralho.push_back(carta(arrayDePesos[k % 13], arrayDeNaipes[k / 13]));
         }
+    }
+    embaralha();
 }
 
 deckDeCartas::embaralha()
 {
     //*-----------Crio um loop para embaralhar as cartas 6 vezes-----------*
-    for (int j=0; j<15; j++)
+    for (int j=0; j<40; j++)
     {
-        for(int first = 0; first < SIZE; first++)
+        for(int first = 0; first < baralho.size(); first++)
         {
                     // *----------- Embaralhando as cartas -----------* //
             // crio um int chamado Second e seto ele como  igual ao operador randomico
@@ -87,7 +90,8 @@ deckDeCartas::printaTudo()
     {
         carta currentCard = baralhoAux.back();
         baralhoAux.pop_back();
-        cout << currentCard.print() << " "  << i << endl;
+        getCardDisplay(currentCard.print());
+        cout << endl;
     }
 }
 

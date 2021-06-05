@@ -8,6 +8,8 @@
 #include <ctime>
 #include <sstream>
 
+#include "designfunctions.h"
+#include "mesa.h"
 #include "Baralho.h"
 #include "mao.h"
 
@@ -21,14 +23,19 @@ class jogador
 {
 
 public:
+    //objetos dentro de jogador
     mao MaoJogador;
-    jogador();
+    mesa MesaJogador;
+
+    //funções
+    jogador(deckDeCartas *baralho);
     setPlayer(deckDeCartas *baralho);
     saca(deckDeCartas *baralho);
     carta retornaDescarte();
     pegaLixo(lixo *lixo);
     printMao();
     carta descarta(int posicao, lixo *lixo);
+    novaSequencia();
 
 private:
 

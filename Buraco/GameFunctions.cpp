@@ -19,13 +19,10 @@ using namespace std;
 
 void executaJogo(int qtJogadores){
     deckDeCartas baralho;
-    jogador Jogador1;
-    Jogador1.setPlayer(&baralho);
-    lixo lixo;
-    lixo.setLixo(&baralho);
-    //Jogador1.saca(Baralho);
-    Jogador1.pegaLixo(&lixo);
-    Jogador1.printMao();
+    baralho.embaralha();
+    jogador Jogador(&baralho);
+    lixo lixo(deckDeCartas *baralho);
+    Jogador.printMao();
     baralho.printaTudo();
 }
 void gameStart()

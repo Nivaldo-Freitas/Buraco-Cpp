@@ -21,9 +21,9 @@
 
 using namespace std;
 
-lixo::lixo()
+lixo::lixo(deckDeCartas *baralho)
 {
-    //
+    setLixo(baralho);
 }
 
 lixo::setLixo(deckDeCartas *baralho)

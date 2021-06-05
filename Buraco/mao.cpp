@@ -1,3 +1,4 @@
+
 #include <iostream>
 #include <ios>
 #include <limits>
@@ -25,7 +26,7 @@ mao::mao()
     //
 }
 
-mao::encheMao(deckDeCartas *baralho)
+mao::setMao(deckDeCartas *baralho)
 {
     for(int i=0; i<MAOSIZE;i++)
     {
@@ -38,7 +39,7 @@ mao::printMao()
     vector <carta> maoAux = maoVetor;
     for(int i=0; i<maoVetor.size();i++)
     {
-        cout << maoAux.back().print() << endl;
+        cout << maoAux.back().print() << "  |  ";
         maoAux.pop_back();
     }
 }
