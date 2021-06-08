@@ -8,6 +8,8 @@
 #include <ctime>
 #include <sstream>
 
+#include "designfunctions.h"
+#include "Baralho.h"
 
 #define SIZE 52
 #define MORTOSIZE 11
@@ -24,6 +26,8 @@ public:
     setLixo(deckDeCartas *baralho);
     carta retornaTopo();
     retornaSizeDoLixo();
+    printLixo();
+    addCard(carta cartaSelecionada);
 
 private:
 

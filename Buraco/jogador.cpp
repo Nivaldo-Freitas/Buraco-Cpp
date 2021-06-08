@@ -11,6 +11,7 @@
 #include "Baralho.h"
 #include "mao.h"
 #include "lixo.h"
+#include "mesa.h"
 
 #include "jogador.h"
 
@@ -21,18 +22,20 @@
 
 using namespace std;
 
-jogador::jogador()
+jogador::jogador(deckDeCartas *baralho)
 {
-  //
+  setPlayer(baralho);
 }
 
 jogador::setPlayer(deckDeCartas *baralho)
 {
     // Aciona a função encheMao através do ponteiro do baralho usando o this "->"
-    MaoJogador.encheMao(baralho);
+    MaoJogador.setMao(baralho);
+    MesaJogador.setMesa(baralho);
+
 }
 
-jogador::saca(deckDeCartas *baralho)
+jogador::sacaMonte(deckDeCartas *baralho)
 {
     // Aciona a função addCard através do ponteiro do baralho usando o this "->"
     MaoJogador.addCard(baralho->tiraCarta());
@@ -40,9 +43,7 @@ jogador::saca(deckDeCartas *baralho)
 
 carta jogador::descarta(int posicao, lixo *lixo)
 {
-    //carta currentCard = MaoJogador[posicao];
-    //MaoJogador.erase(find(MaoJogador.begin(),MaoJogador.end(),currentCard));
-    //lixo.recebecurrentCard;
+    lixo->addCard(MaoJogador.selecionaCarta(posicao));
 }
 
 jogador::pegaLixo(lixo *lixo)
@@ -53,4 +54,18 @@ jogador::pegaLixo(lixo *lixo)
 jogador::printMao()
 {
     MaoJogador.printMao();
+}
+
+jogador::printMaoVertical()
+{
+    MaoJogador.printMaoVertical();
+}
+
+jogador::novaSequencia()
+{
+
+}
+jogador::printMesa()
+{
+    MesaJogador.printMesa();
 }

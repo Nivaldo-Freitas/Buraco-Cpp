@@ -19,14 +19,11 @@ using namespace std;
 
 void executaJogo(int qtJogadores){
     deckDeCartas baralho;
-    jogador Jogador1;
-    Jogador1.setPlayer(&baralho);
+    baralho.embaralha();
+    jogador Jogador(&baralho);
     lixo lixo;
     lixo.setLixo(&baralho);
-    //Jogador1.saca(Baralho);
-    Jogador1.pegaLixo(&lixo);
-    Jogador1.printMao();
-    baralho.printaTudo();
+    iniciaJogada(&Jogador, &lixo,&baralho);
 }
 void gameStart()
 {
@@ -39,8 +36,10 @@ void gameStart()
     cin.clear();
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
     if(qtJogadores == 1 || qtJogadores == 2){
+        system("cls");
         executaJogo(qtJogadores);
     }else{
+        system("cls");
         getBlock();
         cout << "Informe um valor correto" << endl;
         cout << "Dupla ou Solo?" << endl;
@@ -65,3 +64,122 @@ void endGame(){
         endGame();
     }
 }
+// FUNÇÕES DA FASE DE EDIÇÃO
+
+void menuNovaSequencia(jogador *Jogador)
+{
+    int tamanhoDaSequencia;
+    cout << endl << "O digite o tamanho da sequencia que vai baixar:";
+    getSeparator();
+    cout << endl << "Sua resposta: ";
+    cin >> tamanhoDaSequencia;
+    getSeparator();
+    Jogador->printMaoVertical();
+    getBlock();
+    cout << endl << "Digite a posicao das cartas que usará para criar sua sequencia";
+    cout << endl << "Sua resposta: ";
+    int posicao;
+    for(int k= 0; k<tamanhoDaSequencia;k++)
+    {
+        cin >> posicao;
+    }
+}
+
+void menuEdicao(jogador *Jogador)
+{
+    int opcaoEscolhida;
+    cout << endl << "O digite o numero do que deseja fazer:";
+    getDoubleChoice("1 - Baixar NOVA SEQUENCIA", "2 - Editar a sequencia na Mesa");
+    getSeparator();
+    cout << "Sua resposta: ";
+    cin >> opcaoEscolhida;
+    if(opcaoEscolhida == 1)
+    {
+        system("cls");
+        menuNovaSequencia(Jogador);
+    }
+    if(opcaoEscolhida == 2)
+    {
+        system("cls");
+    }
+}
+void menuDescarte(jogador *Jogador, lixo *lixo)
+{
+    int posicaoDaCartaNoVetor = 0;
+    system("cls");
+    Jogador->printMaoVertical();
+    cout << "Escolha qual carta vai descartar:" << endl;
+    cout << "Sua resposta: ";
+    cin >> posicaoDaCartaNoVetor;
+    Jogador->descarta(posicaoDaCartaNoVetor, lixo);
+    Jogador->printMao();
+    lixo->printLixo();
+}
+void faseDeEdicao(jogador *Jogador, lixo *lixo)
+{
+    system("cls");
+    Jogador->printMao();
+    int opcaoEscolhida = 0;
+    cout << endl << "O digite o numero do que deseja fazer:";
+    getDoubleChoice("1 - Editar a Mesa", "2 - Escolher uma carta para Descartar");
+    getSeparator();
+    cout << "Sua resposta: ";
+    cin >> opcaoEscolhida;
+    if(opcaoEscolhida == 1)
+    {
+        system("cls");
+        menuEdicao(Jogador);
+    }
+    if(opcaoEscolhida == 2)
+    {
+        system("cls");
+        menuDescarte(Jogador, lixo);
+    }
+    if(opcaoEscolhida != 1 && opcaoEscolhida != 2)
+    {
+        faseDeEdicao(Jogador, lixo);
+    }
+}
+
+// FUNÇÕES DE INICIO DE JOGADA
+void menuSaque(jogador *Jogador, lixo *lixo, deckDeCartas *baralho)
+{
+    int opcaoEscolhida = 0;
+    cout << endl << "O digite o numero do que deseja fazer:";
+    getTripleChoice("1 - Sacar do Lixo", "2 - Sacar do Monte", "3 - Ver Mao,Mesa e Lixo");
+    getSeparator();
+    cout << "Sua resposta: ";
+    cin >> opcaoEscolhida;
+    if(opcaoEscolhida == 1)
+    {
+        Jogador->pegaLixo(lixo);
+        faseDeEdicao(Jogador, lixo);
+    }
+    if(opcaoEscolhida == 2)
+    {
+        Jogador->sacaMonte(baralho);
+        faseDeEdicao(Jogador, lixo);
+    }
+    if(opcaoEscolhida == 3)
+    {
+        system("cls");
+        Jogador->printMao();
+        Jogador->printMesa();
+        lixo->printLixo();
+        menuSaque(Jogador,lixo,baralho);
+    }
+    if(opcaoEscolhida != 1 && opcaoEscolhida != 2 && opcaoEscolhida != 3)
+    {
+        system("cls");
+        getBlock();
+        cout << "insira um numero valido dentre as opcoes" << endl;
+        getBlock();
+        menuSaque(Jogador,lixo,baralho);
+    }
+}
+void iniciaJogada(jogador *Jogador, lixo *lixo, deckDeCartas *baralho)
+{
+    Jogador->printMao();
+    menuSaque(Jogador,lixo,baralho);
+}
+

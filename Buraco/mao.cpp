@@ -1,3 +1,4 @@
+
 #include <iostream>
 #include <ios>
 #include <limits>
@@ -25,7 +26,7 @@ mao::mao()
     //
 }
 
-mao::encheMao(deckDeCartas *baralho)
+mao::setMao(deckDeCartas *baralho)
 {
     for(int i=0; i<MAOSIZE;i++)
     {
@@ -36,11 +37,26 @@ mao::encheMao(deckDeCartas *baralho)
 mao::printMao()
 {
     vector <carta> maoAux = maoVetor;
+    cout << endl << "Sua mao e: " << endl;
     for(int i=0; i<maoVetor.size();i++)
     {
-        cout << maoAux.back().print() << endl;
+        cout << maoAux.back().print() << "  |  ";
         maoAux.pop_back();
     }
+    getSeparator();
+}
+
+mao::printMaoVertical()
+{
+    vector <carta> maoAux = maoVetor;
+    cout << endl << "Sua mao e: " << endl;
+    for(int i=0; i<maoVetor.size();i++)
+    {
+        getCardDisplay(maoAux.back().print());
+        cout << maoVetor.size()-(i+1) << endl;
+        maoAux.pop_back();
+    }
+    getSeparator();
 }
 
 mao::addCard(carta cartaSelecionada)
@@ -56,7 +72,9 @@ mao::recebeLixo(lixo *lixo)
     }
 }
 
-//mao::selecionaCarta(int selecionador)
-//{
-    //return maoVetor[selecionador];
-//}
+carta mao::selecionaCarta(int selecionador)
+{
+    carta currentCard = maoVetor[selecionador];
+    maoVetor.erase(maoVetor.begin()+(selecionador));
+    return currentCard;
+}

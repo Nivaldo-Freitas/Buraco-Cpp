@@ -1,4 +1,5 @@
 #pragma once
+
 #include <iostream>
 #include <ios>
 #include <limits>
@@ -8,6 +9,7 @@
 #include <ctime>
 #include <sstream>
 
+#include "designfunctions.h"
 #include "lixo.h"
 
 #define SIZE 52
@@ -23,11 +25,12 @@ public:
 
     vector <carta> maoVetor;
     mao();
-    encheMao(deckDeCartas *baralho);
+    setMao(deckDeCartas *baralho);
     printMao();
+    printMaoVertical();
     addCard(carta);
     recebeLixo(lixo *lixo);
-    selecionaCarta(int selecionador);
+    carta selecionaCarta(int selecionador);
 
 private:
 
