@@ -15,15 +15,26 @@
 
 using namespace std;
 
-//artes
 void getSeparator(){
-    std::cout << "----------------------------------------" << std::endl;
+    cout << endl << "----------------------------------------" << endl;
 }
 void getBlock(){
-    std::cout << "========================================" << std::endl;
+    cout << endl << "========================================" << endl;
 }
-void getDoubleChoice(std::__cxx11::string first, std::__cxx11::string second){
-    std::cout << first << "                     " << second << std::endl;
+void getDoubleChoice(string first, string second){
+    getSeparator();
+    cout << first << "          |          " << second << endl;
+}
+void getTripleChoice(string first, string second, string third)
+{
+    getSeparator();
+    cout << first << "          |          " << second << "          |          " << third << endl;
+    getSeparator();
+}
+void getQuadrupleChoice(string first, string second, string third, string fourth)
+{
+    getSeparator();
+    cout << first << "          |          " << second << "          |          " << third << "          |          " << fourth << endl;
 }
 
 void getCardDisplay(string card)

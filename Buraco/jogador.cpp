@@ -35,7 +35,7 @@ jogador::setPlayer(deckDeCartas *baralho)
 
 }
 
-jogador::saca(deckDeCartas *baralho)
+jogador::sacaMonte(deckDeCartas *baralho)
 {
     // Aciona a função addCard através do ponteiro do baralho usando o this "->"
     MaoJogador.addCard(baralho->tiraCarta());
@@ -43,9 +43,7 @@ jogador::saca(deckDeCartas *baralho)
 
 carta jogador::descarta(int posicao, lixo *lixo)
 {
-    //carta currentCard = MaoJogador[posicao];
-    //MaoJogador.erase(find(MaoJogador.begin(),MaoJogador.end(),currentCard));
-    //lixo.recebecurrentCard;
+    lixo->addCard(MaoJogador.selecionaCarta(posicao));
 }
 
 jogador::pegaLixo(lixo *lixo)
@@ -58,9 +56,17 @@ jogador::printMao()
     MaoJogador.printMao();
 }
 
-jogador::novaSequencia()
+jogador::printMaoVertical()
 {
-    //vector <carta> aux;
-    //aux.push_back();
-    //MesaJogador.recebeNovaSequencia(aux);
+    MaoJogador.printMaoVertical();
+}
+
+jogador::novaSequencia(int tamanhoDaSequencia, vector <int> indicesDasCartasSelecionadas)
+{
+    MesaJogador.recebeNovaSequencia(MaoJogador.puxaSequencia(tamanhoDaSequencia, indicesDasCartasSelecionadas));
+}
+
+jogador::printMesa()
+{
+    MesaJogador.printMesa();
 }

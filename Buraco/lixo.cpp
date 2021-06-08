@@ -21,9 +21,9 @@
 
 using namespace std;
 
-lixo::lixo(deckDeCartas *baralho)
+lixo::lixo()
 {
-    setLixo(baralho);
+    //
 }
 
 lixo::setLixo(deckDeCartas *baralho)
@@ -43,7 +43,19 @@ lixo::retornaSizeDoLixo()
     return lixoVetor.size();
 }
 
-//lixo::recebeDescarte(carta carta)
-//{
+lixo::printLixo()
+{
+    vector <carta> lixoAux = lixoVetor;
+    cout << endl << "O lixo e: " << endl;
+    for(int i=0; i<lixoVetor.size();i++)
+    {
+        cout << lixoAux.back().print() << "  |  ";
+        lixoAux.pop_back();
+    }
+    getSeparator();
+}
 
-//}
+lixo::addCard(carta carta)
+{
+    lixoVetor.push_back(carta);
+}

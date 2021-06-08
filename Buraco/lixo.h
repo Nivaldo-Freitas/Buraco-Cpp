@@ -22,10 +22,12 @@ class lixo
 public:
 
     vector <carta> lixoVetor;
-    lixo(deckDeCartas *baralho);
+    lixo();
     setLixo(deckDeCartas *baralho);
     carta retornaTopo();
     retornaSizeDoLixo();
+    printLixo();
+    addCard(carta cartaSelecionada);
 
 private:
 

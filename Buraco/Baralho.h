@@ -18,12 +18,12 @@ public:
         //construtor padrão de cartas vazias
     carta();
         //Construtor com parametros, para preencher as cartas vazias criadas
-    carta(string pesoDaCarta, string naipeDaCarta);
+    carta(int pesoDaCarta, int naipeDaCarta);
         //print function
     string print();
         //Cria duas strings para naipe e pesos da carta
-    string peso;
-    string naipe;
+    int peso;
+    int naipe;
 
 private:
 

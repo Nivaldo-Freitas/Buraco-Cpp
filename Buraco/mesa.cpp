@@ -30,13 +30,16 @@ mesa::mesa()
 
 mesa::printMesa()
 {
+    cout << endl << "Sua mesa e: " << endl;
     for(int i = 0; i< mesaJogador.size();i++)
     {
         for(int j = 0; j< mesaJogador[i].size();j++)
         {
-            mesaJogador[i][j].print();
+            getCardDisplay(mesaJogador[i][j].print());
+            cout << endl;
         }
     }
+    getSeparator();
 }
 
 mesa::recebeNovaSequencia(vector <carta> sequenciaRecebida)
@@ -45,7 +48,7 @@ mesa::recebeNovaSequencia(vector <carta> sequenciaRecebida)
     {
         if(mesaJogador[i].empty())
         {
-            mesaJogador[i] = sequenciaRecebida;
+           // mesaJogador[i].push_back(sequenciaRecebida);
         }
     }
 }

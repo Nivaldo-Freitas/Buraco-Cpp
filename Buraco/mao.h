@@ -27,10 +27,11 @@ public:
     mao();
     setMao(deckDeCartas *baralho);
     printMao();
+    printMaoVertical();
     addCard(carta);
     recebeLixo(lixo *lixo);
-    selecionaCarta(int selecionador);
-
+    carta selecionaCarta(int selecionador);
+    vector <carta> puxaSequencia(int tamanhoDaSequencia, vector <int> indicesDasCartasSelecionadas);
 private:
 
 };

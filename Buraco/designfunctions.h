@@ -6,5 +6,7 @@ using namespace std;
 
 void getSeparator();
 void getBlock();
-void getDoubleChoice(std::__cxx11::string first, std::__cxx11::string second);
-void getCardDisplay(std::string card);
+void getDoubleChoice(string first, string second);
+void getTripleChoice(string first, string second, string third);
+void getQuadrupleChoice(string first, string second, string third, string fourth);
+void getCardDisplay(string card);

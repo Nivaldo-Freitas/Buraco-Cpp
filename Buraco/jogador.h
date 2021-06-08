@@ -30,12 +30,15 @@ public:
     //funções
     jogador(deckDeCartas *baralho);
     setPlayer(deckDeCartas *baralho);
-    saca(deckDeCartas *baralho);
+    sacaMonte(deckDeCartas *baralho);
     carta retornaDescarte();
     pegaLixo(lixo *lixo);
     printMao();
+    printMaoVertical();
+    novaSequencia(int tamanhoDaSequencia, vector <int> indicesDasCartasSelecionadas);
     carta descarta(int posicao, lixo *lixo);
     novaSequencia();
+    printMesa();
 
 private:
 
