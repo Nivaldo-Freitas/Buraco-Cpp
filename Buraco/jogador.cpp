@@ -56,11 +56,6 @@ jogador::printMao()
     MaoJogador.printMao();
 }
 
-jogador::printMaoVertical()
-{
-    MaoJogador.printMaoVertical();
-}
-
 jogador::novaSequencia(int tamanhoDaSequencia, vector <int> indicesDasCartasSelecionadas)
 {
     MesaJogador.recebeNovaSequencia(MaoJogador.puxaSequencia(tamanhoDaSequencia, indicesDasCartasSelecionadas));

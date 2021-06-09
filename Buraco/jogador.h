@@ -34,7 +34,6 @@ public:
     carta retornaDescarte();
     pegaLixo(lixo *lixo);
     printMao();
-    printMaoVertical();
     novaSequencia(int tamanhoDaSequencia, vector <int> indicesDasCartasSelecionadas);
     carta descarta(int posicao, lixo *lixo);
     novaSequencia();

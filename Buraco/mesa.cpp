@@ -44,11 +44,11 @@ mesa::printMesa()
 
 mesa::recebeNovaSequencia(vector <carta> sequenciaRecebida)
 {
-    for(int i = 0; i< mesaJogador.size();i++)
+    for(int i = 0; i<= mesaJogador.size();i++)
     {
-        if(mesaJogador[i].empty())
+        if(mesaJogador.empty())
         {
-           // mesaJogador[i].push_back(sequenciaRecebida);
+           //mesaJogador[i].push_back(sequenciaRecebida);
         }
     }
 }

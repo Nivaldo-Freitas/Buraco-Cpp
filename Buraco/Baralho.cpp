@@ -27,6 +27,11 @@ carta::carta()
  // aqui adiciona um elemento vazio ao vetor do baralho.
 }
 
+carta::retornaNaipe()
+{
+    return naipe;
+}
+
 //constructor com dois parametros
 carta::carta(int pesoDaCarta, int naipeDaCarta)
 {
@@ -65,7 +70,7 @@ string carta::print()
             naipeAux = "C";
             break;
         case 1:
-            naipeAux = "D";
+            naipeAux = "O";
             break;
         case 2:
             naipeAux = "P";

@@ -75,7 +75,7 @@ void menuNovaSequencia(jogador *Jogador, lixo *lixo)
     cout << endl << "Sua resposta: ";
     cin >> tamanhoDaSequencia;
     getSeparator();
-    Jogador->printMaoVertical();
+    Jogador->printMao();
     getBlock();
     cout << endl << "Digite a posicao das cartas que usará para criar sua sequencia";
     cout << endl << "Sua resposta: ";
@@ -121,7 +121,7 @@ void menuDescarte(jogador *Jogador, lixo *lixo)
 {
     int posicaoDaCartaNoVetor = 0;
     system("cls");
-    Jogador->printMaoVertical();
+    Jogador->printMao();
     cout << "Escolha qual carta vai descartar:" << endl;
     cout << "Sua resposta: ";
     cin >> posicaoDaCartaNoVetor;

@@ -27,7 +27,6 @@ public:
     mao();
     setMao(deckDeCartas *baralho);
     printMao();
-    printMaoVertical();
     addCard(carta);
     recebeLixo(lixo *lixo);
     carta selecionaCarta(int selecionador);

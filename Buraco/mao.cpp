@@ -52,18 +52,7 @@ mao::setMao(deckDeCartas *baralho)
 
 mao::printMao()
 {
-    vector <carta> maoAux = maoVetor;
-    cout << endl << "Sua mao e: " << endl;
-    for(int i=0; i<maoVetor.size();i++)
-    {
-        cout << maoAux.back().print() << "  |  ";
-        maoAux.pop_back();
-    }
-    getSeparator();
-}
-
-mao::printMaoVertical()
-{
+    organizaVetor(&maoVetor);
     vector <carta> maoAux = maoVetor;
     cout << endl << "Sua mao e: " << endl;
     for(int i=0; i<maoVetor.size();i++)

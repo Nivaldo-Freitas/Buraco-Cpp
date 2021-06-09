@@ -19,6 +19,8 @@ public:
     carta();
         //Construtor com parametros, para preencher as cartas vazias criadas
     carta(int pesoDaCarta, int naipeDaCarta);
+        //Função que retorna o naipe, usado para comparações e ordenações.
+    retornaNaipe();
         //print function
     string print();
         //Cria duas strings para naipe e pesos da carta
