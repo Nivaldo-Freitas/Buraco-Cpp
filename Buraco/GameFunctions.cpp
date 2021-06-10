@@ -70,6 +70,8 @@ void menuNovaSequencia(jogador *Jogador, lixo *lixo)
 {
     vector <int> vetorComIndices;
     int tamanhoDaSequencia;
+    Jogador->printMao();
+    getSeparator();
     cout << endl << "O digite o tamanho da sequencia que vai baixar:";
     getSeparator();
     cout << endl << "Sua resposta: ";
@@ -77,7 +79,7 @@ void menuNovaSequencia(jogador *Jogador, lixo *lixo)
     getSeparator();
     Jogador->printMao();
     getBlock();
-    cout << endl << "Digite a posicao das cartas que usará para criar sua sequencia";
+    cout << endl << "Digite !!!!EM ORDEM CRESCENTE!!!! a posicao das cartas que usará para criar sua sequencia ";
     cout << endl << "Sua resposta: ";
     int posicao;
     for(int k= 0; k<tamanhoDaSequencia;k++)
@@ -85,15 +87,25 @@ void menuNovaSequencia(jogador *Jogador, lixo *lixo)
         cin >> posicao;
         vetorComIndices.push_back(posicao);
     }
-    Jogador->novaSequencia(tamanhoDaSequencia, vetorComIndices);
+    Jogador->novaSequencia(tamanhoDaSequencia, vetorComIndices, lixo);
     faseDeEdicao(Jogador, lixo);
 }
 void menuEditaSequencia(jogador *Jogador, lixo *lixo)
 {
     getSeparator();
+    Jogador->printMao();
     Jogador->printMesa();
     getSeparator();
-    cout << endl << "Qual Sequencia Deseja Editar?";
+    int indiceDaSequencia;
+    getChoice("Qual Sequencia Deseja Editar?");
+    cin >> indiceDaSequencia;
+    if(indiceDaSequencia<Jogador->MaoJogador.maoVetor.size() && indiceDaSequencia >=0)
+    {
+        Jogador->editaSequencia(indiceDaSequencia);
+    }else{
+        faseDeEdicao(Jogador, lixo);
+    }
+    faseDeEdicao(Jogador, lixo);
 }
 void menuEdicao(jogador *Jogador,lixo *lixo)
 {
@@ -108,19 +120,19 @@ void menuEdicao(jogador *Jogador,lixo *lixo)
     cin >> opcaoEscolhida;
     if(opcaoEscolhida == 1)
     {
-        system("cls");
+        //system("cls");
         menuNovaSequencia(Jogador, lixo);
     }
     if(opcaoEscolhida == 2)
     {
-        system("cls");
+        //system("cls");
         menuEditaSequencia(Jogador,lixo);
     }
 }
 void menuDescarte(jogador *Jogador, lixo *lixo)
 {
     int posicaoDaCartaNoVetor = 0;
-    system("cls");
+    //system("cls");
     Jogador->printMao();
     cout << "Escolha qual carta vai descartar:" << endl;
     cout << "Sua resposta: ";
@@ -131,7 +143,7 @@ void menuDescarte(jogador *Jogador, lixo *lixo)
 }
 void faseDeEdicao(jogador *Jogador, lixo *lixo)
 {
-    system("cls");
+    //system("cls");
     Jogador->printMao();
     int opcaoEscolhida = 0;
     cout << endl << "O digite o numero do que deseja fazer:";
@@ -141,12 +153,12 @@ void faseDeEdicao(jogador *Jogador, lixo *lixo)
     cin >> opcaoEscolhida;
     if(opcaoEscolhida == 1)
     {
-        system("cls");
+        //system("cls");
         menuEdicao(Jogador, lixo);
     }
     if(opcaoEscolhida == 2)
     {
-        system("cls");
+        //system("cls");
         menuDescarte(Jogador, lixo);
     }
     if(opcaoEscolhida != 1 && opcaoEscolhida != 2)
@@ -176,7 +188,7 @@ void menuSaque(jogador *Jogador, lixo *lixo, deckDeCartas *baralho)
     }
     if(opcaoEscolhida == 3)
     {
-        system("cls");
+        //system("cls");
         Jogador->printMao();
         Jogador->printMesa();
         lixo->printLixo();
@@ -184,7 +196,7 @@ void menuSaque(jogador *Jogador, lixo *lixo, deckDeCartas *baralho)
     }
     if(opcaoEscolhida != 1 && opcaoEscolhida != 2 && opcaoEscolhida != 3)
     {
-        system("cls");
+        //system("cls");
         getBlock();
         cout << "insira um numero valido dentre as opcoes" << endl;
         getBlock();

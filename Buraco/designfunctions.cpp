@@ -54,3 +54,10 @@ void getCardDisplay(string card)
         cout << displayAux[i];
     }
 }
+
+void getChoice(string frase)
+{
+    cout << endl << frase;
+    getSeparator();
+    cout << endl << "Sua resposta: ";
+}

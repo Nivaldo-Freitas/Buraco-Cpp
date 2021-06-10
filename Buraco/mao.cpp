@@ -1,4 +1,5 @@
-#include<algorithm>
+
+#include <algorithm>
 #include <iostream>
 #include <ios>
 #include <limits>
@@ -77,20 +78,58 @@ mao::recebeLixo(lixo *lixo)
     }
 }
 
-carta mao::selecionaCarta(int selecionador)
+carta mao::tiraCarta(int selecionador)
 {
     carta currentCard = maoVetor[selecionador];
-    maoVetor.erase(maoVetor.begin()+(selecionador));
+    maoVetor.erase(maoVetor.begin()+selecionador);
     return currentCard;
 }
 
 vector <carta> mao::puxaSequencia(int tamanhoDaSequencia, vector <int> indicesDasCartasSelecionadas)
 {
-    vector <carta> vetorAuxiliar;
-    for(int h= 0; h<tamanhoDaSequencia; h++)
-    {
-        vetorAuxiliar.push_back(selecionaCarta(indicesDasCartasSelecionadas[h]));
-    }
-    return vetorAuxiliar;
+        vector <carta> vetorAuxiliar;
+        for(int x= 0; x<tamanhoDaSequencia; x++)
+        {
+            vetorAuxiliar.push_back(tiraCarta(indicesDasCartasSelecionadas[x]));
+            for(int z= 0; z<tamanhoDaSequencia; z++)
+            {
+                indicesDasCartasSelecionadas[z]--;
+            }
+        }
+        return vetorAuxiliar;
 }
+
+mao::verificaNaipe(int tamanhoDaSequencia, vector <int> indicesDasCartasSelecionadas)
+{
+    vector <carta> vetorAuxiliar;
+    for(int h = 1; h<tamanhoDaSequencia;h++)
+    {
+        int aux=0;
+        if(maoVetor[indicesDasCartasSelecionadas[h-1]].naipe == maoVetor[indicesDasCartasSelecionadas[h]].naipe)
+        {
+            aux++;
+            if(aux == (tamanhoDaSequencia-1))
+            {
+                if(!puxaSequencia(tamanhoDaSequencia, indicesDasCartasSelecionadas).empty())
+                {
+                    return true;
+                }
+            }
+        }else{
+            return false;
+        }
+    }
+}
+
+mao::verificaNaipe(int indiceDaSequencia, int indiceDaCarta, mesa *MesaJogador)
+{
+    if(maoVetor[indiceDaCarta].naipe == MesaJogador->mesaJogador[indiceDaSequencia][1].naipe)
+    {
+        return true;
+    }else{
+        return false;
+    }
+}
+
+
 
