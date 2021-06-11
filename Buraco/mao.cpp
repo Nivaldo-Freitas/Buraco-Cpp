@@ -72,7 +72,7 @@ mao::addCard(carta cartaSelecionada)
 
 mao::recebeLixo(lixo *lixo)
 {
-    for(int i=0; i<lixo->retornaSizeDoLixo();i++)
+    for(int i=lixo->lixoVetor.size(); i>=0;i--)
     {
         maoVetor.push_back(lixo->retornaTopo());
     }

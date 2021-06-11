@@ -21,9 +21,10 @@ void executaJogo(int qtJogadores){
     deckDeCartas baralho;
     baralho.embaralha();
     jogador Jogador(&baralho);
+    jogador Jogador1(&baralho);
     lixo lixo;
     lixo.setLixo(&baralho);
-    iniciaJogada(&Jogador, &lixo,&baralho);
+    alternaJogador(&Jogador, &Jogador1, &lixo, &baralho);
 }
 void gameStart()
 {
@@ -209,3 +210,10 @@ void iniciaJogada(jogador *Jogador, lixo *lixo, deckDeCartas *baralho)
     menuSaque(Jogador,lixo,baralho);
 }
 
+void alternaJogador(jogador *Jogador, jogador *Jogador1, lixo *lixo, deckDeCartas *baralho)
+{
+    for(;;){
+        iniciaJogada(Jogador, lixo, baralho);
+        iniciaJogada(Jogador1, lixo, baralho);
+    }
+}

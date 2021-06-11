@@ -23,3 +23,4 @@ void menuEdicao(jogador *Jogador, lixo *lixo);
 void faseDeEdicao(jogador *Jogador,lixo *lixo);
 void menuSaque(jogador *Jogador, lixo *lixo, deckDeCartas *baralho);
 void iniciaJogada(jogador *Jogador, lixo *lixo,deckDeCartas *baralho);
+void alternaJogador(jogador *Jogador, jogador *Jogador1, lixo *lixo, deckDeCartas *baralho);
