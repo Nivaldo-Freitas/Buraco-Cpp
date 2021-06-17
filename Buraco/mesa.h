@@ -32,7 +32,10 @@ public:
     mesa();
     printMesa();
     recebeNovaSequencia(vector <carta> sequenciaRecebida);
+    editaSequencia(int indiceDaSequencia, carta carta);
+    printSequencia(int indiceDaSequencia);
     setMesa(deckDeCartas *baralho);
+    carta recebeCarta(int selecionador, vector <carta> sequenciaRecebida);
 
 private:
 

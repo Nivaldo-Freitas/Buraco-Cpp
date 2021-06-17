@@ -34,10 +34,12 @@ public:
     carta retornaDescarte();
     pegaLixo(lixo *lixo);
     printMao();
-    printMaoVertical();
+    novaSequencia(int tamanhoDaSequencia, vector <int> indicesDasCartasSelecionadas, lixo *lixo);
     carta descarta(int posicao, lixo *lixo);
-    novaSequencia();
+    printSequencia(int indiceDaSequencia);
+    editaSequencia(int indiceDaSequencia);
     printMesa();
+
 
 private:
 

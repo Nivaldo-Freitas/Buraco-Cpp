@@ -43,7 +43,7 @@ jogador::sacaMonte(deckDeCartas *baralho)
 
 carta jogador::descarta(int posicao, lixo *lixo)
 {
-    lixo->addCard(MaoJogador.selecionaCarta(posicao));
+    lixo->addCard(MaoJogador.tiraCarta(posicao));
 }
 
 jogador::pegaLixo(lixo *lixo)
@@ -56,15 +56,36 @@ jogador::printMao()
     MaoJogador.printMao();
 }
 
-jogador::printMaoVertical()
+jogador::novaSequencia(int tamanhoDaSequencia, vector <int> indicesDasCartasSelecionadas, lixo *lixo)
 {
-    MaoJogador.printMaoVertical();
+    if(MaoJogador.verificaNaipe(tamanhoDaSequencia, indicesDasCartasSelecionadas))
+    {
+        MesaJogador.recebeNovaSequencia(MaoJogador.puxaSequencia(tamanhoDaSequencia, indicesDasCartasSelecionadas));
+    }
 }
 
-jogador::novaSequencia()
+jogador::printSequencia(int indiceDaSequencia)
 {
+    cout << endl << "Você escolheu editar a sequencia: ";
+    MesaJogador.printSequencia(indiceDaSequencia);
+    getSeparator();
+}
+
+jogador::editaSequencia(int indiceDaSequencia)
+{
+    int indiceDaCarta = 0;
+    indiceDaSequencia--;
+    this->printSequencia(indiceDaSequencia);
+    this->printMao();
+    cout << "Escolha qual carta vai adicionar a Sequencia: ";
+    cin >> indiceDaCarta;
+    if(MaoJogador.verificaNaipe(indiceDaSequencia, indiceDaCarta, &MesaJogador))
+    {
+        MesaJogador.editaSequencia(indiceDaSequencia, MaoJogador.tiraCarta(indiceDaCarta));
+    }
 
 }
+
 jogador::printMesa()
 {
     MesaJogador.printMesa();

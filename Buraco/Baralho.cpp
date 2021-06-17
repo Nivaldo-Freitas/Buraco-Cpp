@@ -27,8 +27,13 @@ carta::carta()
  // aqui adiciona um elemento vazio ao vetor do baralho.
 }
 
+carta::retornaNaipe()
+{
+    return naipe;
+}
+
 //constructor com dois parametros
-carta::carta(string pesoDaCarta, string naipeDaCarta)
+carta::carta(int pesoDaCarta, int naipeDaCarta)
 {
     peso = pesoDaCarta;
     naipe = naipeDaCarta;
@@ -37,16 +42,53 @@ carta::carta(string pesoDaCarta, string naipeDaCarta)
 
 string carta::print()
 {
-    return (peso + " of " + naipe);
+    string pesoAux;
+    string naipeAux;
+    switch(peso)
+    {
+        case 1:
+            pesoAux = "Ace";
+            break;
+        case 11:
+            pesoAux = "Jack";
+            break;
+        case 12:
+            pesoAux = "Queen";
+            break;
+        case 13:
+            pesoAux = "King";
+            break;
+        default:
+            stringstream A;
+            A << peso;
+            A >> pesoAux;
+            break;
+    }
+    switch(naipe)
+    {
+        case 0:
+            naipeAux = "C";
+            break;
+        case 1:
+            naipeAux = "O";
+            break;
+        case 2:
+            naipeAux = "P";
+            break;
+        case 3:
+            naipeAux = "E";
+            break;
+    }
+    return (pesoAux + " of " + naipeAux);
 }
 
 //Cria o as SIZE cartas do deck
 deckDeCartas::deckDeCartas()
 {
     //insere todos os possiveis pesos de cada naipe
-    string arrayDePesos[] = {"Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"};
+    int arrayDePesos[] = {1, 2, 3, 4, 5, 6 , 7, 8, 9, 10, 11, 12, 13};
     //*-----------insere todos os possiveis naipes-----------*
-    string arrayDeNaipes[] = {"C", "D", "P", "E"};
+    int arrayDeNaipes[] = {0, 1, 2, 3};
 
     // *----------- Inserindo cartas -----------* //
         //cria um loop para colocar cada carta no novo array

@@ -6,6 +6,7 @@
 #include <cstdlib>
 #include <ctime>
 #include <sstream>
+#include <algorithm>
 
 #define QUANTIDADE_DE_DECKS 2
 #define SIZE 52
@@ -23,6 +24,21 @@
 
 using namespace std;
 
+void organizaMesa(vector <carta> *vetor)
+{
+    sort(vetor->begin(), vetor->end(),
+    [](const carta& atual, const carta& proximo)
+    {
+        return atual.peso < proximo.peso;
+    });
+    sort(vetor->begin(), vetor->end(),
+    [](const carta& atual, const carta& proximo)
+    {
+        return atual.naipe < proximo.naipe;
+        ;
+    });
+}
+
 mesa::mesa()
 {
     //
@@ -30,27 +46,46 @@ mesa::mesa()
 
 mesa::printMesa()
 {
-    cout << endl << "Sua mesa e: " << endl;
-    for(int i = 0; i< mesaJogador.size();i++)
+    if(mesaJogador.size() > 0)
     {
-        for(int j = 0; j< mesaJogador[i].size();j++)
+        cout << endl << "Sua mesa e: " << endl;
+        for(int i = 0; i< mesaJogador.size(); i++)
         {
-            getCardDisplay(mesaJogador[i][j].print());
+            cout << "sequencia: " << i+1;
+            this->printSequencia(i);
             cout << endl;
         }
+        cout << endl;
+    }else{
+        cout << endl << "Mesa Vazia" << endl;
     }
     getSeparator();
+}
+carta mesa::recebeCarta(int selecionador, vector <carta> sequenciaRecebida)
+{
+    carta currentCard = sequenciaRecebida[selecionador];
+    sequenciaRecebida.erase(sequenciaRecebida.begin()+(selecionador));
+    return currentCard;
 }
 
 mesa::recebeNovaSequencia(vector <carta> sequenciaRecebida)
 {
-    for(int i = 0; i< mesaJogador.size();i++)
+    mesaJogador.push_back(sequenciaRecebida);
+}
+
+mesa::editaSequencia(int indiceDaSequencia, carta carta)
+{
+    mesaJogador[indiceDaSequencia].push_back(carta);
+    organizaMesa(&mesaJogador[indiceDaSequencia]);
+}
+
+mesa::printSequencia(int indiceDaSequencia)
+{
+    for(int i = 0; i<mesaJogador[indiceDaSequencia].size();i++)
     {
-        if(mesaJogador[i].empty())
-        {
-            mesaJogador[i] = sequenciaRecebida;
-        }
+        getCardDisplay(mesaJogador[indiceDaSequencia][i].print());
     }
+    getSeparator();
 }
 
 mesa::setMesa(deckDeCartas *baralho)

@@ -190,7 +190,7 @@
 	"designfunctions.h"
 	"Baralho.h"
 
-1622873969 source:c:\users\neto\documents\github\buraco-cpp\buraco\baralho.cpp
+1623263630 source:c:\users\neto\documents\github\buraco-cpp\buraco\baralho.cpp
 	<iostream>
 	<ios>
 	<limits>
@@ -205,10 +205,10 @@
 	"lixo.h"
 	"Baralho.h"
 
-1623121461 c:\users\neto\documents\github\buraco-cpp\buraco\designfunctions.h
+1623295391 c:\users\neto\documents\github\buraco-cpp\buraco\designfunctions.h
 	<iostream>
 
-1622873969 c:\users\neto\documents\github\buraco-cpp\buraco\baralho.h
+1623261110 c:\users\neto\documents\github\buraco-cpp\buraco\baralho.h
 	<iostream>
 	<ios>
 	<limits>
@@ -218,7 +218,7 @@
 	<ctime>
 	<sstream>
 
-1623128390 source:c:\users\neto\documents\github\buraco-cpp\buraco\designfunctions.cpp
+1623295391 source:c:\users\neto\documents\github\buraco-cpp\buraco\designfunctions.cpp
 	<iostream>
 	<ios>
 	<limits>
@@ -229,7 +229,7 @@
 	<sstream>
 	"designfunctions.h"
 
-1623130609 source:c:\users\neto\documents\github\buraco-cpp\buraco\jogador.cpp
+1623301484 source:c:\users\neto\documents\github\buraco-cpp\buraco\jogador.cpp
 	<iostream>
 	<ios>
 	<limits>
@@ -245,7 +245,7 @@
 	"mesa.h"
 	"jogador.h"
 
-1623130686 source:c:\users\neto\documents\github\buraco-cpp\buraco\lixo.cpp
+1623133567 source:c:\users\neto\documents\github\buraco-cpp\buraco\lixo.cpp
 	<iostream>
 	<ios>
 	<limits>
@@ -260,7 +260,7 @@
 	"jogador.h"
 	"lixo.h"
 
-1622873969 source:c:\users\neto\documents\github\buraco-cpp\buraco\main.cpp
+1623133567 source:c:\users\neto\documents\github\buraco-cpp\buraco\main.cpp
 	<iostream>
 	<ios>
 	<limits>
@@ -276,7 +276,8 @@
 	"lixo.h"
 	"GameFunctions.h"
 
-1623133304 source:c:\users\neto\documents\github\buraco-cpp\buraco\mao.cpp
+1623336726 source:c:\users\neto\documents\github\buraco-cpp\buraco\mao.cpp
+	<algorithm>
 	<iostream>
 	<ios>
 	<limits>
@@ -291,7 +292,7 @@
 	"lixo.h"
 	"mao.h"
 
-1623128639 source:c:\users\neto\documents\github\buraco-cpp\buraco\mesa.cpp
+1623298303 source:c:\users\neto\documents\github\buraco-cpp\buraco\mesa.cpp
 	<iostream>
 	<ios>
 	<limits>
@@ -300,6 +301,7 @@
 	<cstdlib>
 	<ctime>
 	<sstream>
+	<algorithm>
 	"designfunctions.h"
 	"lixo.h"
 	"mao.h"
@@ -308,7 +310,7 @@
 	"Baralho.h"
 	"mesa.h"
 
-1622873969 c:\users\neto\documents\github\buraco-cpp\buraco\mesa.h
+1623296575 c:\users\neto\documents\github\buraco-cpp\buraco\mesa.h
 	<iostream>
 	<ios>
 	<limits>
@@ -321,14 +323,14 @@
 	"morto.h"
 	"Baralho.h"
 
-1622873969 source:c:\users\neto\documents\github\buraco-cpp\buraco\monte.cpp
+1623133567 source:c:\users\neto\documents\github\buraco-cpp\buraco\monte.cpp
 	"monte.h"
 	<iostream>
 
-1622873969 c:\users\neto\documents\github\buraco-cpp\buraco\monte.h
+1623133567 c:\users\neto\documents\github\buraco-cpp\buraco\monte.h
 	<iostream>
 
-1622873969 source:c:\users\neto\documents\github\buraco-cpp\buraco\morto.cpp
+1623133567 source:c:\users\neto\documents\github\buraco-cpp\buraco\morto.cpp
 	<iostream>
 	<ios>
 	<limits>
@@ -341,7 +343,7 @@
 	"Baralho.h"
 	"morto.h"
 
-1623130609 c:\users\neto\documents\github\buraco-cpp\buraco\mao.h
+1623297223 c:\users\neto\documents\github\buraco-cpp\buraco\mao.h
 	<iostream>
 	<ios>
 	<limits>
@@ -352,8 +354,9 @@
 	<sstream>
 	"designfunctions.h"
 	"lixo.h"
+	"mesa.h"
 
-1623116739 c:\users\neto\documents\github\buraco-cpp\buraco\jogador.h
+1623296601 c:\users\neto\documents\github\buraco-cpp\buraco\jogador.h
 	<iostream>
 	<ios>
 	<limits>
@@ -367,7 +370,7 @@
 	"Baralho.h"
 	"mao.h"
 
-1623130091 c:\users\neto\documents\github\buraco-cpp\buraco\lixo.h
+1623133567 c:\users\neto\documents\github\buraco-cpp\buraco\lixo.h
 	<iostream>
 	<ios>
 	<limits>
@@ -379,7 +382,7 @@
 	"designfunctions.h"
 	"Baralho.h"
 
-1623130812 source:c:\users\neto\documents\github\buraco-cpp\buraco\gamefunctions.cpp
+1623335439 source:c:\users\neto\documents\github\buraco-cpp\buraco\gamefunctions.cpp
 	<iostream>
 	<ios>
 	<limits>
@@ -395,7 +398,7 @@
 	"lixo.h"
 	"GameFunctions.h"
 
-1623128063 c:\users\neto\documents\github\buraco-cpp\buraco\gamefunctions.h
+1623335416 c:\users\neto\documents\github\buraco-cpp\buraco\gamefunctions.h
 	<iostream>
 	<ios>
 	<limits>
@@ -405,7 +408,7 @@
 	<ctime>
 	<sstream>
 
-1622873969 c:\users\neto\documents\github\buraco-cpp\buraco\morto.h
+1623133567 c:\users\neto\documents\github\buraco-cpp\buraco\morto.h
 	<iostream>
 	<ios>
 	<limits>

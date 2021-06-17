@@ -1,5 +1,6 @@
 #pragma once
 
+
 #include <iostream>
 #include <ios>
 #include <limits>
@@ -11,6 +12,7 @@
 
 #include "designfunctions.h"
 #include "lixo.h"
+#include "mesa.h"
 
 #define SIZE 52
 #define MORTOSIZE 11
@@ -27,10 +29,12 @@ public:
     mao();
     setMao(deckDeCartas *baralho);
     printMao();
-    printMaoVertical();
     addCard(carta);
     recebeLixo(lixo *lixo);
-    carta selecionaCarta(int selecionador);
+    carta tiraCarta(int selecionador);
+    vector <carta> puxaSequencia(int tamanhoDaSequencia, vector <int> indicesDasCartasSelecionadas);
+    verificaNaipe(int tamanhoDaSequencia, vector <int> indicesDasCartasSelecionadas);
+    verificaNaipe(int indiceDaSequencia, int indiceDaCarta, mesa *MesaJogador);
 
 private:
 
